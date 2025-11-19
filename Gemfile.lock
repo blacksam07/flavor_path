@@ -231,6 +231,7 @@ GEM
     erubis (2.7.0)
     et-orbi (1.4.0)
       tzinfo
+    event_stream_parser (1.0.0)
     factory_bot (6.5.5)
       activesupport (>= 6.1.0)
     factory_bot_rails (6.5.1)
@@ -242,6 +243,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
+    faraday-multipart (1.1.1)
+      multipart-post (~> 2.0)
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     faraday-retry (2.3.2)
@@ -370,6 +373,9 @@ GEM
     mini_portile2 (2.8.9)
     minitest (5.26.1)
     msgpack (1.8.0)
+    multipart-post (2.4.1)
+    neighbor (0.6.0)
+      activerecord (>= 7.1)
     net-http (0.6.0)
       uri
     net-imap (0.5.12)
@@ -408,6 +414,7 @@ GEM
     pg (1.6.2-x86_64-linux)
     pg_query (6.1.0)
       google-protobuf (>= 3.25.3)
+    pgvector (0.3.2)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -584,6 +591,10 @@ GEM
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
       rubocop-rspec (~> 3.5)
+    ruby-openai (8.3.0)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (3.2.1)
@@ -688,12 +699,14 @@ DEPENDENCIES
   letter_opener (~> 1.10)
   listen (~> 3.9)
   lograge (~> 0.14)
+  neighbor (~> 0.6)
   newrelic_rpm (~> 9.23)
   octokit (~> 10.0)
   pagy (~> 43.0)
   parallel_tests (~> 5.5)
   pg (~> 1.6)
   pg_query (~> 6.1.0)
+  pgvector (~> 0.3.2)
   prosopite (~> 2.1.2)
   pry-byebug (~> 3.11)
   pry-rails (~> 0.3.11)
@@ -716,6 +729,7 @@ DEPENDENCIES
   rubocop-rake (~> 0.7.1)
   rubocop-rspec (~> 3.7)
   rubocop-rspec_rails (~> 2.32.0)
+  ruby-openai (~> 8.3)
   selenium-webdriver (~> 4.38.0)
   sendgrid (~> 1.2.4)
   shoulda-matchers (~> 7.0)
@@ -727,7 +741,7 @@ DEPENDENCIES
   yaaf (~> 3.0)
 
 RUBY VERSION
-   ruby 3.4.1p0
+   ruby 3.4.2p28
 
 BUNDLED WITH
    2.5.18

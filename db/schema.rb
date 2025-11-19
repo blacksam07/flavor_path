@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_01_200354) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_19_170654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+  enable_extension "vector"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -165,6 +166,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_01_200354) do
     t.index ["priority", "scheduled_at"], name: "index_good_jobs_on_priority_scheduled_at_unfinished_unlocked", where: "((finished_at IS NULL) AND (locked_by_id IS NULL))"
     t.index ["queue_name", "scheduled_at"], name: "index_good_jobs_on_queue_name_and_scheduled_at", where: "(finished_at IS NULL)"
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.string "neighborhood"
+    t.jsonb "cuisine_tags", default: []
+    t.integer "price_level", default: 1
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.jsonb "reviews", default: []
+    t.vector "embedding", limit: 1536
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", force: :cascade do |t|

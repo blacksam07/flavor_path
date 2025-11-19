@@ -710,6 +710,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flavor_path@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "flavor_path@workspace:."
+  dependencies:
+    "@activeadmin/activeadmin": "npm:3.4.0"
+    "@fortawesome/fontawesome-free": "npm:7.1.0"
+    arctic_admin: "npm:4.3.3"
+    esbuild: "npm:0.27.0"
+    jquery: "npm:3.7.1"
+    jquery-ui: "npm:1.14.1"
+    jquery-ujs: "npm:1.2.3"
+    sass: "npm:^1.94.0"
+  languageName: unknown
+  linkType: soft
+
 "foreground-child@npm:^3.1.0":
   version: 3.3.0
   resolution: "foreground-child@npm:3.3.0"
@@ -1182,21 +1197,6 @@ __metadata:
   checksum: 10c0/9c7045a1a2928094b5b9b15336dcd2a7b1c052f674550df63cc3f36cd44028e5080448175b6f6ca32b642de81150f5e7b1a98b728f15cb069f2dd60ac2616b96
   languageName: node
   linkType: hard
-
-"rails_api_base@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "rails_api_base@workspace:."
-  dependencies:
-    "@activeadmin/activeadmin": "npm:3.4.0"
-    "@fortawesome/fontawesome-free": "npm:7.1.0"
-    arctic_admin: "npm:4.3.3"
-    esbuild: "npm:0.27.0"
-    jquery: "npm:3.7.1"
-    jquery-ui: "npm:1.14.1"
-    jquery-ujs: "npm:1.2.3"
-    sass: "npm:^1.94.0"
-  languageName: unknown
-  linkType: soft
 
 "readdirp@npm:^4.0.1":
   version: 4.0.2

@@ -9,11 +9,11 @@ default: &default
 
 development:
   <<: *default
-  database: rails_api_base_development
+  database: flavor_path_development
 
 test:
   <<: *default
-  database: rails_api_base_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: flavor_path_test<%= ENV['TEST_ENV_NUMBER'] %>
 
 # For production is recommended to set DATABASE_URL env variable.
 # It will take precedence over the config defined here.

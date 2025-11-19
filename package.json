@@ -1,5 +1,5 @@
 {
-  "name": "rails_api_base",
+  "name": "flavor_path",
   "private": true,
   "engines": {
     "node": "^22.0.0",

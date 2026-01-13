@@ -23,4 +23,13 @@ class Restaurant < ApplicationRecord
   validates :name, :latitude, :longitude, presence: true
 
   enum :price_level, { low: 1, medium: 2, high: 3 }, default: :low
+
+  def content_for_embedding
+    [
+      name,
+      description,
+      cuisine_tags.join(' '),
+      (reviews || []).pluck('text').join(' ')
+    ].compact.join("\n")
+  end
 end

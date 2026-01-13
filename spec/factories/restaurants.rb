@@ -19,13 +19,13 @@
 #
 FactoryBot.define do
   factory :restaurant do
-    name { "MyString" }
-    description { "MyText" }
-    neighborhood { "MyString" }
-    cuisine_tags { "" }
+    name { 'MyString' }
+    description { 'MyText' }
+    neighborhood { 'MyString' }
+    cuisine_tags { '' }
     price_level { 1 }
     latitude { 1.5 }
     longitude { 1.5 }
-    reviews { "" }
+    reviews { '' }
   end
 end

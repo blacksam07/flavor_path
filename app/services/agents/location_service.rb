@@ -29,12 +29,6 @@ module Agents
       8. When in doubt, favor neighborhoods that locals would consider "part of" or "adjacent to" the given location.
     SYS
 
-    # naive map for sample terms (expand as needed)
-    PRESET_LOCATIONS = {
-      'downtown chicago' => { neighborhoods: ['Loop', 'River North'], center: { lat: 41.8837, lng: -87.6278 },
-                              radius_meters: 3000 },
-      'loop' => { neighborhoods: ['Loop'], center: { lat: 41.8837, lng: -87.6278 }, radius_meters: 1500 }
-    }.freeze
     def initialize(openai_client: OpenAIClient, model: ENV.fetch('OPENAI_CHAT_MODEL', 'gpt-4o-mini'))
       @client = openai_client
       @model = model
@@ -48,16 +42,6 @@ module Agents
 
       resp = @client.chat.completions.create!(messages: messages, model: @model, max_tokens: 800)
       JSON.parse(resp.choices.first.message.content)
-    end
-
-    def parse(user_text)
-      text = user_text.downcase
-      PRESET_LOCATIONS.each do |k, v|
-        return v if text.include?(k)
-      end
-
-      # fallback: ask for clarification in production; here we return nils
-      { neighborhoods: [], center: nil, radius_meters: 5000 }
     end
   end
 end

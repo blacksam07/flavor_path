@@ -1,4 +1,6 @@
-# FlavorPath
+# FlavorPath :spaghetti: <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/0e8d87ed-a490-4021-adde-f209e6bf6870" />
+
+
 
 [![Github Actions CI](https://github.com/rootstrap/rails_api_base/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/rootstrap/rails_api_base/actions)
 

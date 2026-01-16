@@ -18,6 +18,7 @@ FlavorPath is a Restaurant Recommendation API that use RAG (Retrieval Augmented 
 
 1. Clone this repo
 1. Install PostgreSQL and vector extension
+1. Run `rails db:setup && rails db:seed` To get the initial data
 1. Run `bin/dev`
 1. You can now try your API using the defined endpoint
 
